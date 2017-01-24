@@ -1,0 +1,53 @@
+<div id="page-container" >
+	    <!-- begin login -->
+        <div class="login bg-black animated fadeInDown">
+            <!-- begin brand -->
+            <div class="login-header">
+                <div class="brand">
+                    <span class="logo"></span> <span>Chat LOGIN</span>
+                    <!--<small>responsive bootstrap 3 admin template</small>-->
+                </div>
+                <div class="icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>
+            </div>
+            <!-- end brand -->
+			
+
+            <div class="login-content">
+				<div id="success_div" class="alert alert-success fade in m-b-15" ng-show="ischkeck==1">
+					<strong>Success!</strong>
+					<span id="success_msg"></span>
+					<span class="close" data-dismiss="alert">x</span>
+				</div>
+				<div id="error_div" class="alert alert-danger fade in m-b-15" ng-show="ischkeck==0">
+					<strong>Failed!</strong>
+					<span id="error_msg"></span>
+					<span class="close" data-dismiss="alert">x</span>
+				</div>
+                <form method="POST" name="myForm" class="margin-bottom-0"  data-validate="parsley" novalidate>
+                    <div class="form-group m-b-20">
+
+                    <!-- angular js validation start here -->
+                     <input type="text" class="form-control parsley-validated" placeholder="Email" name="user" ng-model="user" required>
+                     <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                     <span ng-show="myForm.user.$error.required">Email is required.</span>
+                     </span>
+                    </div>
+                    <div class="form-group m-b-20">
+
+                    <input type="password" class="form-control parsley-validated" placeholder="password" name="password" ng-model="password" required>
+                     <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                     <span ng-show="myForm.password.$error.required">Password is required.</span>
+                     </span>
+                    </div>
+                    
+                    <div class="login-buttons">
+                    
+                    <input type="submit" class="btn btn-success btn-block btn-lg" ng-click="login(user,password)" ng-disabled="myForm.user.$invalid  || myForm.password.$invalid" value="Sign me in"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end login -->
+	</div>
